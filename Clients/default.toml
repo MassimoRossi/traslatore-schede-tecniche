@@ -1,0 +1,10 @@
+[style]
+prudence_level = 3
+
+[lexicon]
+banned = []
+preferred = []
+
+[output]
+structure = []
+bullets = true
