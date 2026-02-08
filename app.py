@@ -27,6 +27,11 @@ client = OpenAI(api_key=api_key)
 # -----------------------------
 st.set_page_config(page_title="Trasformatore schede tecniche – Edilizia", layout="wide")
 
+pwd = st.text_input("Password", type="password")
+if pwd != st.secrets.get("APP_PASSWORD"):
+    st.stop()
+
+
 api_key = st.secrets.get("OPENAI_API_KEY") or os.getenv("OPENAI_API_KEY")
 if not api_key:
     st.warning("Variabile d'ambiente OPENAI_API_KEY non trovata. Impostala prima di avviare l'app.")
